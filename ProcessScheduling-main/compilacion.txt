@@ -1,0 +1,41 @@
+
+El proyecto se puede compilar de dos formas principales
+
+FORMA 1 - se puede compilar de esta forma:
+
+1) Por si se hizo una compilación antes esto sirve para eliminar la carpeta out de las .class
+
+rm -rf out
+
+2) Compilar todo el proyecto: este lo puse para Mac
+
+javac -d out $(find src -name "*.java") ProcessScheduler.java
+
+FORMA 2 — Compilar con comodines '**'
+
+1) Activar globstar solo para Mac:
+
+shopt -s globstar
+
+2) Compilar se puede hacer en Linux o windows sin el globstar:
+
+javac -d out src/**/*.java ProcessScheduler.java
+
+javac -d out `
+ProcessScheduler.java `
+src\planificador\*.java `
+src\scheduler\processing\*.java `
+src\scheduler\processing\pp\*.java `
+src\scheduler\processing\rr\*.java `
+src\scheduler\scheduling\*.java `
+src\scheduler\scheduling\policy\*.java `
+src\gui\*.java
+
+Ejemplo de ejecucion
+
+java -cp out gui.SchedulerGUI
+
+java -cp out ProcessScheduler -fcfs 1-3 1 1 1 1
+java -cp out ProcessScheduler -lcfs 1-3 1 1 1 1
+java -cp out ProcessScheduler -pp   1-3 1 1 1 1
+java -cp out ProcessScheduler -rr   1-3 1 1 1 1 0.5

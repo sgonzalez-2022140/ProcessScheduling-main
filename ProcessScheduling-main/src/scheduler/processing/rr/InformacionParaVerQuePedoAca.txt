@@ -1,0 +1,24 @@
+Round-Robin (RR):
+Se define una unidad de tiempo fija llamada quantum. Cada proceso se atiende esa unidad de tiempo, en una forma FCFS, y
+ si no alcanza ese tiempo para concluir el requerimiento del proceso, el proceso pasa a la cola a esperar su turno otra vez.
+  Entonces, el tiempo que requiere el proceso, es dividido en quanta (plural de quantum) y eso seria el total de veces que tendria
+   que hacer cola. Cuando su tiempo requerido acaba, sale de la cola definitivamente.
+
+
+En palabras sencillas (Por chatsito):
+
+Round-Robin es como cuando varios amigos juegan en la misma consola y usan un cronómetro para turnarse.
+
+Hay una fila (cola) de procesos esperando CPU.
+
+Se elige un tiempo fijo llamado quantum (por ejemplo 2 ms).
+
+El primero de la fila usa la CPU solo ese quantum.
+
+Si en ese tiempo termina, se va y ya no vuelve.
+
+Si no termina, lo “cortan” aunque le falte y lo mandan al final de la fila para esperar otro turno.
+
+Luego pasa el siguiente proceso, igualito.
+
+O sea: todos avanzan por turnos cortos, nadie se queda pegado con la CPU mucho tiempo, y es más justo para todos.
